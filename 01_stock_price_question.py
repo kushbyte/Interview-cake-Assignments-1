@@ -27,3 +27,19 @@ No "shorting"—you need to buy before you can sell. Also, you can't buy and
 sell in the same time step—at least 1 minute has to pass. """
 
 # Start coding from here
+n=int(input("enter the length of list:"))
+prices=[]
+for i in range (0,n):
+  prices.append(int(input("enter the prices:")))
+if len(prices)==0:
+  print("0") 
+l=[]
+s=[]
+s=sorted(prices)
+q=[]
+for j in range (0,len(s)):
+  p=prices.index(s[j])
+  for i in range (p,len(prices)):
+    l.append(prices[i])
+  q.append(max(l)-s[j])
+print(max(q))
